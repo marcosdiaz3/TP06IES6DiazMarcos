@@ -26,6 +26,7 @@
 				<th>Código Postal</th>
 				<th>Teléfono</th>
 				<th>Correo Electrónico</th>
+				<th>Edicion</th>
 
 			</tr>
 			<tr th:each="alumno:${listado}">
@@ -41,8 +42,11 @@
 				<td th:text="${alumno.direccionCP}"></td>
 				<td th:text="${alumno.telefono}"></td>
 				<td th:text="${alumno.correoElectronico}"></td>
-
-			</tr>
+			
+				<td><a type="button" class="btn btn-warning"  
+				href="#"
+				th:href="@{'/eliminarAlumno/'+${alumno.dni}}">ELIMINAR</a></td>
+				</tr>
 		</table>
 		<form>
 			<input type="button" onclick="history.back()" name="Volver atrás" value="Volver atrás">
